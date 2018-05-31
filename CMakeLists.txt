@@ -23,7 +23,9 @@ macro (add_sources)
 endmacro()
 
 project (gamepadRawInput)
-#include_directories(include)
+include_directories(include)
 add_sources(main.cpp)
+add_sources(hid_dll_functions_win.cpp)
+add_sources(gamepad_raw_input_win.cpp)
 add_executable(gamepadRawInput ${SRCS})
 
