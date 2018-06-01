@@ -1,11 +1,12 @@
 #ifndef HID_DLL_FUNCTIONS_WIN_H
 #define HID_DLL_FUNCTIONS_WIN_H
 
-// #include <WinDef.h>
-// #include <hidsdi.h>
 #include <stdint.h>
 #include <stdlib.h>
-// #include <windows.h>
+#include <windows.h>
+#include <hidsdi.h>
+#include <Hidpi.h>
+
 
 namespace gamepad {
 
@@ -81,7 +82,7 @@ class HidDllFunctionsWin {
 
  private:
   bool is_valid_;
-  base::ScopedNativeLibrary hid_dll_;
+  HMODULE hid_dll_;
   HidPGetCapsFunc hidp_get_caps_ = nullptr;
   HidPGetButtonCapsFunc hidp_get_button_caps_ = nullptr;
   HidPGetValueCapsFunc hidp_get_value_caps_ = nullptr;
